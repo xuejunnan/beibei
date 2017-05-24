@@ -1,0 +1,982 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>è´è´ç½‘-ä¹°æ¯å©´ä¸Šè´è´ï¼8000ä¸‡å¦ˆå¦ˆä¿¡èµ–çš„æ¯å©´æ­£å“ç‰¹å–å•†åŸ</title>
+<meta name="keywords" content="æ¯å©´ç‰¹å–,æ¯å©´å•†åŸ,ç«¥è£…,ç«¥é‹,ç©å…·,è´è´ç½‘" />
+<meta name="description" content="8000ä¸‡å¦ˆå¦ˆä¿¡èµ–ä¹‹é€‰ï¼Œæ¯å¤©1æŠ˜èµ·é™æ—¶ç‰¹å–ï¼Œç«¥è£…ç«¥é‹ã€æ¯å©´ç”¨å“ã€å±…å®¶ç™¾è´§ã€å¥³è£…é‹åŒ…ç­‰å¤©å¤©ä¸Šæ–°ï¼Œæ­£å“ä¿è¯ï¼Œå…¨åœºåŒ…é‚®ã€‚" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="stylesheet" href="homecsslib.css" tppabs="http://st.beibei.com/static/build/css/30aa5a5a2bm/homecsslib.css" type="text/css" media="all"/>
+<link rel="stylesheet" type="text/css" media="all" href="home_index.css" tppabs="http://st.beibei.com/static/build/css/7eec9a3210m/home_index.css"/>
+<script type="text/javascript">
+        (function() {
+            window.devMode = ('' === '1') ? true : false ;
+            var item_id = '';
+            var ua = navigator.userAgent,
+                href = location.href,
+                url = '',
+                matched,
+                utm = 'utm_source=',
+                utm1 = '',
+                utm2 = '',
+                utmSource = null,
+                invitex = null,
+                search = location.search,
+                firstLogin = getCookie('firstLogin'),
+                isSeller = href.search('http://seller.beibei.com/') !== -1;
+
+            var getUrlParam = function (name) {
+                var search = window.location.search,
+                    matched = search.slice(1).match(new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i'));
+                return search.length ? (matched && matched[2]) : null;
+            };
+
+            if ( !isSeller && ('' === firstLogin) &&
+                (ua.match(/Android/i) || 
+                ua.match(/WebOs/i) ||
+                ua.match(/iPhone/i) ||
+                ua.match(/iPod/i) || 
+                ua.match(/BlackBerry/i) ||
+                ua.match(/windows mobile/i) || 
+                ua.match(/Windows Phone/i)) && 
+                'wap' !== getUrlParam('from') ) { // æœ€åçš„åˆ¤æ–­æ”¾æœ€å æ¥æºh5
+
+                utmSource = getUrlParam('utm_source');
+                invitex = getUrlParam('invitex');
+                utm = utmSource ? (utm + utmSource) : '';
+                utm1 = utm ? '?' + utm : utm;
+                utm2 = utm ? '&' + utm : utm;
+
+                if (invitex) { // å¥½å‹é‚€è¯·
+                    url = 'http://m.beibei.com/app/invitation/register.html?code=' + invitex;
+                } else if( (matched = href.match(/beibei\.com\/martshow\/(\d+).html/) ) ){ // ä¸“åœºåˆ—è¡¨é¡µ
+                    url = 'http://m.beibei.com/list/list.html?eventId=' + matched[1] + utm2;
+                } else if ( ( matched = href.match(/global\.beibei\.com\/detail\/(\d+)-(\d+).html/) ) ){ // æµ·å¤–è´­è¯¦æƒ…
+                    url = 'http://m.beibei.com/detail/detail.html?event_id=' + matched[1] + '&product_id=' + matched[2] + '&iid=' + item_id + utm2;
+                } else if ( ( matched = href.match(/www\.beibei\.com\/detail\/(\d+)-(\d+).html/) ) ) { // å•†å“è¯¦æƒ…é¡µ
+                    var xid = getUrlParam('xid');
+                    url = 'http://m.beibei.com/detail/detail.html?event_id=' + matched[1] + '&product_id=' + matched[2]+ '&iid=' + item_id;
+                    url += (xid ? '&xid='+xid+utm2 : utm2);
+                } else if ( ( matched = href.match(/you\.beibei\.com\/detail\/(\d+)-(\d+).html/) ) ){ // é™é‡è´­è¯¦æƒ…
+                    url = 'http://m.beibei.com/detail/detail.html?event_id=' + matched[1] + '&product_id=' + matched[2] + '&iid=' + item_id + utm2;
+                } else if ( (matched = href.match(/global\.beibei\.com/) ) ) { // æµ·å¤–è´­
+                    url = 'http://m.beibei.com/oversea/oversea-index.html' + utm1;
+                } else if ( (matched = href.match(/you\.beibei\.com/) ) ) { // é™é‡è´­
+                    url = 'http://m.beibei.com/tuan/tuan-index.html' + utm1;
+                } else if ( (matched = href.match(/\.beibei\.com\/event\/(xinrenli|laokeli)\/index\.html/) ) ) { // æ–°äººç¤¼ è€å®¢ç¤¼
+                    url = 'http://m.beibei.com/party/2014/10/' + matched[1] + '.html';
+                } else if ( href.search(/t\.beibei\.com|newsletter\.beibei\.com|\.beibei\.com\/member\/email_verify\.html|beibei\.com\/member\/passwd_init\.html|d\.beibei\.com\/outer\/oauth\/erp\.html/gi) === -1 ) { // éªŒè¯
+                    url = 'http://m.beibei.com/' + utm1;
+                }
+
+                if (url) {
+                    window.location.replace(url);
+                }
+            }
+        })();
+
+        function getCookie(c_name) {
+            var c_start,
+                c_end;
+
+ã€€ã€€ã€€ã€€if (document.cookie.length>0) {
+            ã€€ã€€ã€€ã€€ã€€ã€€c_start = document.cookie.indexOf(c_name + "=")
+ã€€ã€€ã€€ã€€ã€€ã€€if (c_start != -1) {
+                ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€c_start = c_start + c_name.length+1;
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€c_end = document.cookie.indexOf(";", c_start);
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€if (c_end == -1) c_end = document.cookie.length;ã€€ã€€
+                ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€return unescape(document.cookie.substring(c_start, c_end));
+ã€€ã€€ã€€ã€€ã€€ã€€}
+ã€€ã€€ã€€ã€€}
+
+ã€€ã€€ã€€ã€€return '';
+ã€€ã€€}
+    </script>
+<script type="text/javascript">
+        g = {};	g.__d__ = "1495536165";
+        g.__gm__ = new Array();
+        g.__b__ = "aHR0cDovL3d3dy5iZWliZWkuY29tLw==";
+        g.__t__ = "";
+        g.__cookieDomain__ = "http://www.beibei.com/.beibei.com".substring(1);
+        isIE = !!window.ActiveXObject;
+        isIE6 = isIE&&!window.XMLHttpRequest;
+        isIE8 = isIE&&!!document.documentMode;
+        isIE7 = isIE&&!isIE6&&!isIE8;
+        function call_reg(call) {
+            g.__gm__.push(call);
+        }
+
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.defer=1;a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+        ga('create', 'UA-49983298-1', 'http://www.beibei.com/beibei.com');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+
+        ga('require', 'ecommerce', 'ecommerce.js'/*tpa=http://www.beibei.com/ecommerce.js*/);
+        
+
+                var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "hm.js-2f9c2192a3db990ee9e63707ba0ba1ed"/*tpa=http://hm.baidu.com/hm.js?2f9c2192a3db990ee9e63707ba0ba1ed*/;
+            hm.defer = 1;
+            hm.async = 1;
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        
+            </script>
+<link rel="shortcut icon" type="image/x-icon" href="http://b0.hucdn.com/img/favicon.ico" media="screen" />
+<link rel="apple-touch-icon" href="//b0.hucdn.com/img/common/apple_icon.png" />
+<link rel="canonical" href="http://www.beibei.com/" />
+</head>
+<script>
+    var pageData = {},
+        pageId = 'welcome/index';
+</script>
+<body>
+<div class="top-nav">
+<div class="wrapper">
+<ul c-rid="01047">
+<li class="view-LoginStatus" data-status="0">æ‚¨å¥½ï¼Œ
+<a class="view-ActionBack" c-bname="è¯·ç™»å½•" clog c-emit="click" c-et="event" c-etl="" href="javascript:if(confirm('http://www.beibei.com/member/login.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/member/login.html'" tppabs="http://www.beibei.com/member/login.html">è¯·ç™»å½•</a> &nbsp;
+<a class="view-ActionBack striking-link" c-bname="å…è´¹æ³¨å†Œ" clog c-emit="click" c-et="event" c-etl="" href="javascript:if(confirm('http://www.beibei.com/member/register.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/member/register.html'" tppabs="http://www.beibei.com/member/register.html" rel="nofollow">å…è´¹æ³¨å†Œ</a></li>
+<li class="seg"></li>
+<li><a c-bname="å•†å®¶å…¥é©»" clog c-emit="click" c-et="event" c-etl="" href="javascript:if(confirm('http://seller.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://seller.beibei.com/'" tppabs="http://seller.beibei.com/">
+å•†å®¶å…¥é©»
+</a></li>
+<li class="seg"></li>
+<li>
+<a c-bname="å•†å®¶ä¸­å¿ƒ" clog c-emit="click" c-et="event" c-etl="" href="javascript:if(confirm('http://seller.beibei.com/portal.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://seller.beibei.com/portal.html'" tppabs="http://seller.beibei.com/portal.html">
+å•†å®¶ä¸­å¿ƒ
+</a></li>
+<li class="seg"></li>
+<li class="small">
+<div class="dropdown">
+<span class="dropdown-default">
+<i class="iconfont pink">&#xe621;</i>
+<a target="_blank" c-bname="è”ç³»å®¢æœ" clog c-emit="click" c-et="event" c-etl="" href="javascript:if(confirm('http://www.beibei.com/support/help/frequently_qa_1.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/frequently_qa_1.html'" tppabs="http://www.beibei.com/support/help/frequently_qa_1.html">è”ç³»å®¢æœ</a>
+<i class="iconfont">&#xe601;</i>
+</span>
+<ul class="dropdown-list">
+<li>
+<i class="iconfont pink">&#xf0143;</i> <a c-bname="å¸®åŠ©ä¸­å¿ƒ" clog c-emit="click" c-et="event" c-etl="" href="javascript:if(confirm('http://www.beibei.com/support/help/index.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/index.html'" tppabs="http://www.beibei.com/support/help/index.html">å¸®åŠ©ä¸­å¿ƒ</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="seg"></li>
+<li>
+<div class="dropdown">
+<span class="dropdown-default">
+å…³æ³¨
+<i class="iconfont">&#xe601;</i>
+</span>
+<div class="dropdown-block block-follow">
+<dl class="wechat">
+<dd>å¾®ä¿¡å·ï¼šbeibeiclub</dd>
+<dt title="å¾®ä¿¡æ‰«ä¸€æ‰«"><img src="beibeiclub_90.png" tppabs="http://b0.hucdn.com/img/common/beibeiclub_90.png" alt="" width="90" height="90"/></dt>
+<dd>è®¢é˜…è´è´å®˜æ–¹å¾®ä¿¡</dd>
+</dl>
+<dl class="social">
+<dd><a target="_blank" c-bname="å…³æ³¨æ–°æµªå¾®åš" clog c-emit="click" c-et="event" c-etl="" href="javascript:if(confirm('http://weibo.com/p/1006063963155532/home?from=page_100606&mod=TAB  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://weibo.com/p/1006063963155532/home?from=page_100606&mod=TAB#place'" tppabs="http://weibo.com/p/1006063963155532/home?from=page_100606&mod=TAB#place" title="å…³æ³¨è´è´æ–°æµªå¾®åš"><img src="weibo_45x45.png" tppabs="http://b0.hucdn.com/img/common/weibo_45x45.png" alt="å…³æ³¨è´è´æ–°æµªå¾®åš" width="45" height="45"/></a></dd>
+<dd><a target="_blank" c-bname="å…³æ³¨QQç©ºé—´" clog c-emit="click" c-et="event" c-etl="" href="javascript:if(confirm('http://user.qzone.qq.com/2643291899?ptsig=xhap*Fevow5d8Z6q4BQELbvQeVmB17*Jlr6GDifDLTE  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://user.qzone.qq.com/2643291899?ptsig=xhap*Fevow5d8Z6q4BQELbvQeVmB17*Jlr6GDifDLTE'" tppabs="http://user.qzone.qq.com/2643291899?ptsig=xhap*Fevow5d8Z6q4BQELbvQeVmB17*Jlr6GDifDLTE" title="å…³æ³¨è´è´QQç©ºé—´"><img src="qzone_45x45.png" tppabs="http://b0.hucdn.com/img/common/qzone_45x45.png" alt="å…³æ³¨è´è´QQç©ºé—´" width="45" height="45"/></a></dd>
+</dl>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<style>
+        .nav-seller-position{
+            position: relative;
+        }
+        .nav-seller-position i{
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 27px;
+            height: 18px;
+            background: url("upload_829e7d60f494bb7159132f6c5181c30b_54x36.png")/*tpa=http://b0.hucdn.com/party/2016/12/upload_829e7d60f494bb7159132f6c5181c30b_54x36.png*/;
+            background-size: 100%;
+        }
+    </style>
+<div id="head">
+<div class="wrapper">
+<div class="main-logo">
+<img id="logo" src="main_logo5.png" tppabs="http://b0.hucdn.com/img/common/main_logo5.png" alt="è´è´">
+<a class="main-logo-a" href="index.htm" tppabs="http://www.beibei.com/" title="è¿”å›é¦–é¡µ">&nbsp;</a>
+<div class="main-logo-slogan"><a href="javascript:if(confirm('http://www.beibei.com/guarantee/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/guarantee/'" tppabs="http://www.beibei.com/guarantee/"></a></div>
+<div class="nav-cart" c-rid="01048">
+<a class="top-cart" href="javascript:if(confirm('http://trade.beibei.com/cart/mine.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://trade.beibei.com/cart/mine.html'" tppabs="http://trade.beibei.com/cart/mine.html" c-bname="è´­ç‰©è½¦èœå•" clog c-emit="click" c-et="event" c-etl="">
+<div class="top-cart-icon">
+<i class="iconfont">&#xf0148;</i>
+</div>
+<span>æˆ‘çš„è´­ç‰©è½¦ <i class="iconfont">&#xf0170;</i></span>
+</a>
+<div class="nav-cart-detail hidden view-TopMenuCart">
+</div>
+</div>
+</div>
+</div>
+<div id="main-nav">
+<div class="wrapper" c-rid="01049">
+<a href="index.htm" tppabs="http://www.beibei.com/" c-bname="é¦–é¡µ" clog c-emit="click" c-et="event" c-etl="" class="nav-item current">é¦–é¡µ</a>
+<a href="javascript:if(confirm('http://global.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/'" tppabs="http://global.beibei.com/" c-bname="æµ·å¤–è´­" clog c-emit="click" c-et="event" c-etl="" class="nav-item ">å…¨çƒè´­</a>
+<a href="javascript:if(confirm('http://you.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://you.beibei.com/'" tppabs="http://you.beibei.com/" c-bname="é™é‡è´­" clog c-emit="click" c-et="event" c-etl="" class="nav-item ">é™é‡è´­</a>
+<a href="javascript:if(confirm('http://www.beibei.com/app/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/app/'" tppabs="http://www.beibei.com/app/" c-bname="æ‰‹æœºå®¢æˆ·ç«¯" clog c-emit="click" c-et="event" c-etl="" class="nav-item ">æ‰‹æœºå®¢æˆ·ç«¯</a>
+<a href="javascript:if(confirm('http://www.yuerbao.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.yuerbao.com/'" tppabs="http://www.yuerbao.com/" target="_blank" c-bname="è‚²å„¿å®" clog c-emit="click" c-et="event" c-etl="" class="nav-item">è‚²å„¿å®</a>
+<a href="javascript:if(confirm('http://seller.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://seller.beibei.com/'" tppabs="http://seller.beibei.com/" target="_blank" c-bname="å•†å®¶å…¥é©»" clog c-emit="click" c-et="event" c-etl="" class="nav-item nav-seller-position">å•†å®¶å…¥é©»<i></i></a>
+<div class="m-bn-pa m-bn-slay clearfix">
+<div class="J_mBnCat m-bn-cat m-bn-pr fl">
+<span class="btn-cat">åœ¨å”®åˆ†ç±»<i class="iconfont">&#xe601;</i></span>
+<div class="J_mBnCon m-bn-con m-bn-pa clearfix">
+<ul class="J_bnCate bn-cate fl"></ul>
+<div class="bn-con">
+<ul class="J_bnCon clearfix" rid="01039">
+<li class="bn-loading"><img src="loading5.gif" tppabs="http://b0.hucdn.com/img/welcome/loading5.gif" style="margin-top:70px;"/></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="m-bn-spirit J_btSpritPanel" style="display:inline-block;">
+<input type="text" class="J_bnSearchInput m-bn-search" placeholder="æœç´¢å•†å“æˆ–å“ç‰Œ" value="" maxlength="20">
+<div class="m-bn-content J_bn_content hidden">
+</div>
+</div>
+<div class="m-bn-pr">
+<div class="m-bn-is m-bn-pa">
+<i class="J_bnSearchBtn iconfont">&#xf012c;</i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+window.devMode = ('' === '1') ? true : false ;
+window.showEnvironmentLogo = ('0' === '1') ? true : false;
+window.mainLogo = "prerelease.png"/*tpa=http://b0.hucdn.com/img/prerelease.png*/;
+window.quickLogin = "";
+call_reg('setMemberGradeLogo()');
+function setMemberGradeLogo() {
+    var memberGrade = $.cookie('_m_gd_') || 1;
+    $('.lv-icon-defer').addClass('lv-icon lv' + memberGrade);
+}
+</script>
+<div id="container">
+<div class="sub-nav-cont">
+<div class="sub-nav view-SubNav">
+<div class="wrapper" c-rid="01050">
+<ul>
+<li class="sub-nav-logo">
+<a href="index.htm" tppabs="http://www.beibei.com/"></a>
+</li><li class="dress">
+<a href="javascript:if(confirm('http://www.beibei.com/category/dress.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/dress.html'" tppabs="http://www.beibei.com/category/dress.html" c-bname="ç«¥è£…" clog c-emit="click" c-et="event" c-etl="">
+<span>ç«¥è£…</span>
+</a></li><li class="shoes">
+<a href="javascript:if(confirm('http://www.beibei.com/category/shoes.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/shoes.html'" tppabs="http://www.beibei.com/category/shoes.html" c-bname="ç«¥é‹" clog c-emit="click" c-et="event" c-etl="">
+<span>ç«¥é‹</span>
+</a></li><li class="babythings">
+<a href="javascript:if(confirm('http://www.beibei.com/category/babythings.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/babythings.html'" tppabs="http://www.beibei.com/category/babythings.html" c-bname="ç”¨å“" clog c-emit="click" c-et="event" c-etl="">
+<span>ç”¨å“</span>
+</a></li><li class="toy">
+<a href="javascript:if(confirm('http://www.beibei.com/category/toy.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/toy.html'" tppabs="http://www.beibei.com/category/toy.html" c-bname="ç©å…·" clog c-emit="click" c-et="event" c-etl="">
+<span>ç©å…·</span>
+</a></li>
+<li class="dress">
+<a href="javascript:if(confirm('http://www.beibei.com/category/woman_dress.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/woman_dress.html'" tppabs="http://www.beibei.com/category/woman_dress.html" c-bname="å¥³è£…" clog c-emit="click" c-et="event" c-etl="">
+<span>å¥³è£…</span>
+</a>
+</li>
+<li class="home">
+<a href="javascript:if(confirm('http://www.beibei.com/category/house.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/house.html'" tppabs="http://www.beibei.com/category/house.html" c-bname="å±…å®¶" clog c-emit="click" c-et="event" c-etl="">
+<span>å±…å®¶</span>
+</a>
+</li>
+<li class="food">
+<a href="javascript:if(confirm('http://www.beibei.com/category/food.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/food.html'" tppabs="http://www.beibei.com/category/food.html" c-bname="é£Ÿå“" clog c-emit="click" c-et="event" c-etl="">
+<span>é£Ÿå“</span>
+</a>
+</li>
+<li class="beauty">
+<a href="javascript:if(confirm('http://www.beibei.com/category/beauty.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/beauty.html'" tppabs="http://www.beibei.com/category/beauty.html" c-bname="ç¾å¦†" clog c-emit="click" c-et="event" c-etl="">
+<span>ç¾å¦†</span>
+</a></li><li class="pregnant">
+<a href="javascript:if(confirm('http://d.beibei.com/search/item/query.html?cat=62  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://d.beibei.com/search/item/query.html?cat=62'" tppabs="http://d.beibei.com/search/item/query.html?cat=62" c-bname="å¥¶ç²‰" clog c-emit="click" c-et="event" c-etl="">
+<span>å¥¶ç²‰</span>
+</a></li><li class="diapers">
+<a class="long" href="javascript:if(confirm('http://www.beibei.com/diaper.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/diaper.html'" tppabs="http://www.beibei.com/diaper.html" c-bname="çº¸å°¿è£¤" clog c-emit="click" c-et="event" c-etl="">
+<span>çº¸å°¿è£¤</span>
+</a></li><li class="seg">
+</li><li class="view-AgeList age-list">
+<a href="javascript:void(0);">
+æ€§åˆ«å¹´é¾„ <i class="iconfont">&#xe601;</i>
+</a>
+<div class="sub-list">
+<i class="arrow"></i>
+<h5>ç”·å­©</h5>
+<p>
+<a href="javascript:if(confirm('http://www.beibei.com/category/boy-infant.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/boy-infant.html'" tppabs="http://www.beibei.com/category/boy-infant.html" c-bname="ç”·å­©0-1å²" clog c-emit="click" c-et="event" c-etl="">
+0-1å²</a><a href="javascript:if(confirm('http://www.beibei.com/category/boy-toddler.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/boy-toddler.html'" tppabs="http://www.beibei.com/category/boy-toddler.html" c-bname="ç”·å­©1-3å²" clog c-emit="click" c-et="event" c-etl="">
+1-3å²</a><a href="javascript:if(confirm('http://www.beibei.com/category/boy-kids.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/boy-kids.html'" tppabs="http://www.beibei.com/category/boy-kids.html" c-bname="ç”·å­©3-6å²" clog c-emit="click" c-et="event" c-etl="">
+3-6å²</a><a href="javascript:if(confirm('http://www.beibei.com/category/boy-bigkids.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/boy-bigkids.html'" tppabs="http://www.beibei.com/category/boy-bigkids.html" c-bname="ç”·å­©6-9å²" clog c-emit="click" c-et="event" c-etl="">
+6-9å²</a><a class="z-last" href="javascript:if(confirm('http://www.beibei.com/category/boy-olderkids.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/boy-olderkids.html'" tppabs="http://www.beibei.com/category/boy-olderkids.html" c-bname="ç”·å­©9-12å²" clog c-emit="click" c-et="event" c-etl="">
+9-12å²</a>
+</p>
+<h5>å¥³å­©</h5>
+<p>
+<a href="javascript:if(confirm('http://www.beibei.com/category/girl-infant.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/girl-infant.html'" tppabs="http://www.beibei.com/category/girl-infant.html" c-bname="å¥³å­©0-1å²" clog c-emit="click" c-et="event" c-etl="">
+0-1å²</a><a href="javascript:if(confirm('http://www.beibei.com/category/girl-toddler.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/girl-toddler.html'" tppabs="http://www.beibei.com/category/girl-toddler.html" c-bname="å¥³å­©1-3å²" clog c-emit="click" c-et="event" c-etl="">
+1-3å²</a><a href="javascript:if(confirm('http://www.beibei.com/category/girl-kids.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/girl-kids.html'" tppabs="http://www.beibei.com/category/girl-kids.html" c-bname="å¥³å­©3-6å²" clog c-emit="click" c-et="event" c-etl="">
+3-6å²</a><a href="javascript:if(confirm('http://www.beibei.com/category/girl-bigkids.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/girl-bigkids.html'" tppabs="http://www.beibei.com/category/girl-bigkids.html" c-bname="å¥³å­©6-9å²" clog c-emit="click" c-et="event" c-etl="">
+6-9å²</a><a class="z-last" href="javascript:if(confirm('http://www.beibei.com/category/girl-olderkids.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/category/girl-olderkids.html'" tppabs="http://www.beibei.com/category/girl-olderkids.html" c-bname="å¥³å­©9-12å²" clog c-emit="click" c-et="event" c-etl="">
+9-12å²</a>
+</p>
+</div>
+</li>
+<li class="oversea"><a href="javascript:if(confirm('http://global.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/'" tppabs="http://global.beibei.com/" c-bname="æµ·å¤–è´­" clog c-emit="click" c-et="event" c-etl="">
+<img src="oversea_icon_16x16.png" tppabs="http://b0.hucdn.com/img/common/oversea_icon_16x16.png"> å…¨çƒè´­
+</a></li>
+<li class="tomorrow"><a href="javascript:if(confirm('http://www.beibei.com/brand/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/brand/#tomorrow'" tppabs="http://www.beibei.com/brand/#tomorrow" c-bname="ç²¾å½©é¢„å‘Š" clog c-emit="click" c-et="event" c-etl="">
+<i class="iconfont">&#xf00c4;</i> ç²¾å½©é¢„å‘Š
+</a></li>
+<li class="tuan"><a href="javascript:if(confirm('http://you.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://you.beibei.com/'" tppabs="http://you.beibei.com/" c-bname="é™é‡è´­" clog c-emit="click" c-et="event" c-etl="">
+<img src="f45259dc52970a6ea21d62531e9a96b0.png" tppabs="http://b0.hucdn.com/party/default/f45259dc52970a6ea21d62531e9a96b0.png"> é™é‡è´­
+</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="carousel">
+<ul class="carousel-img">
+<li class="J_bannerCarouselItem">
+<a ams rid="19" class="" href="javascript:;" style="display:none;" data-style="display:block;" target="_blank" c-bname="è½®æ’­-1">
+<img src="blank.png" tppabs="http://b0.hucdn.com/img/common/blank.png" width="0" height="0" />
+</a>
+</li>
+<li class="J_bannerCarouselItem hidden">
+<a ams rid="20" class="" href="javascript:;" style="display:none;" data-style="display:block;" target="_blank" c-bname="è½®æ’­-2">
+<img src="blank.png" tppabs="http://b0.hucdn.com/img/common/blank.png" width="0" height="0" />
+</a>
+</li>
+<li class="J_bannerCarouselItem hidden">
+<a ams rid="21" class="" href="javascript:;" style="display:none;" data-style="display:block;" target="_blank" c-bname="è½®æ’­-3">
+<img src="blank.png" tppabs="http://b0.hucdn.com/img/common/blank.png" width="0" height="0" />
+</a>
+</li>
+<li class="J_bannerCarouselItem hidden">
+<a ams rid="22" class="" href="javascript:;" style="display:none;" data-style="display:block;" target="_blank" c-bname="è½®æ’­-4">
+<img src="blank.png" tppabs="http://b0.hucdn.com/img/common/blank.png" width="0" height="0" />
+</a>
+</li>
+<li class="J_bannerCarouselItem hidden">
+<a ams rid="176" class="" href="javascript:;" style="display:none;" data-style="display:block;" target="_blank" c-bname="è½®æ’­-5">
+<img src="blank.png" tppabs="http://b0.hucdn.com/img/common/blank.png" width="0" height="0" />
+</a>
+</li>
+<li class="J_bannerCarouselItem hidden">
+<a ams rid="352" class="" href="javascript:;" style="display:none;" data-style="display:block;" target="_blank" c-bname="è½®æ’­-6">
+<img src="blank.png" tppabs="http://b0.hucdn.com/img/common/blank.png" width="0" height="0" />
+</a>
+</li>
+<li class="repair-banner hidden">
+<a href="javascript:if(confirm('http://www.beibei.com/app/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/app/'" tppabs="http://www.beibei.com/app/" target="_blank">
+<img src="bbindex_repair.jpg" tppabs="http://b0.hucdn.com/img/welcome/bbindex_repair.jpg"/>
+</a>
+</li>
+</ul>
+<div class="m-dot-lay clearfix">
+<ul class="J_bannerCarouselControl m-dot"></ul>
+</div>
+<ul class="carousel-tag">
+<li class="">
+<a class="detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2787925.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2787925.html'" tppabs="http://www.beibei.com/detail/p/2787925.html" data-url="http://you.beibei.com/detail/102528737-2787925.html" target="_blank" style="border-left:none;">
+<img src="13486054621149_700x700.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1704/01/13486054621149_700x700.jpg!100x100.jpg" width="90" height="90"/>
+<p>é™é‡999ä»¶</p>
+<p class="dot i-icon price">&yen;9.9</p>
+</a>
+</li>
+<li class="move-left">
+<a class="detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/1857019.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/1857019.html'" tppabs="http://www.beibei.com/detail/p/1857019.html" data-url="http://you.beibei.com/detail/102486301-1857019.html" target="_blank" style="border-left:none;border-right:none;">
+<img src="24006144747259_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1608/30/24006144747259_800x800.jpg!100x100.jpg" width="90" height="90"/>
+<p>é™é‡999ä»¶</p>
+<p class="dot i-icon price">&yen;26.9</p>
+</a>
+</li>
+<li class="move-top">
+<a class="detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/1710898.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/1710898.html'" tppabs="http://www.beibei.com/detail/p/1710898.html" data-url="http://you.beibei.com/detail/102404698-1710898.html" target="_blank" style="border-left:none;">
+<img src="68224896931002_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1704/28/68224896931002_800x800.jpg!100x100.jpg" width="90" height="90"/>
+<p>é™é‡999ä»¶</p>
+<p class="dot i-icon price">&yen;25.6</p>
+</a>
+</li>
+<li class="move-top move-left">
+<a class="detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2027363.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2027363.html'" tppabs="http://www.beibei.com/detail/p/2027363.html" data-url="http://you.beibei.com/detail/102406416-2027363.html" target="_blank" style="border-left:none;border-right:none;">
+<img src="37653478773820_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1703/24/37653478773820_800x800.jpg!100x100.jpg" width="90" height="90"/>
+<p>é™é‡999ä»¶</p>
+<p class="dot i-icon price">&yen;18.6</p>
+</a>
+</li>
+</ul>
+</div>
+<div id="content" class="wrapper">
+<div class="g-pt20 g-pb10 g-f-wr">
+<div class="g-f20 g-f-c666">
+<span class="g-fw">ä»Šæ—¥ç‰¹å–</span>
+<span class="g-dot"></span>
+<span>æ¯å¤©9ç‚¹å‡†æ—¶ä¸Šæ–°</span>
+</div>
+</div>
+<div class="m-pos-rel">
+<div class="show-recom-config view-ShowRecomConfig hidden"></div>
+</div>
+<div class="m-mid-lay clearfix">
+<div class="g-r-con g-f-wr">
+<div class="m-brand">
+<ul class="J_chooseType m-brand-tag">
+<li class="mg current" part="m-brand-today">ä»Šæ—¥ä¼˜é€‰</li>
+<li class="mlli" part="m-brand-tommorow">ç²¾å½©é¢„å‘Š</li>
+</ul>
+<ul class="m-brand-list m-brand-today" c-rid="01019">
+<li clog c-emit='show;click[a]' c-et='event' c-etl='10060'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/10060.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/10060.html'" tppabs="http://global.beibei.com/show/10060.html" target="_blank">
+<img src="18285629439794_200x100.png" tppabs="http://b1.hucdn.com/upload/brand/1501/22/18285629439794_200x100.png" title="å–œå®è¾…é£Ÿ-æ¬§æ´²ç™¾å¹´å“ç‰Œ" alt="å–œå®è¾…é£Ÿ-æ¬§æ´²ç™¾å¹´å“ç‰Œ" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='290003243'>
+<a href="javascript:if(confirm('http://www.beibei.com/martshow/290003243.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/martshow/290003243.html'" tppabs="http://www.beibei.com/martshow/290003243.html" target="_blank">
+<img src="52555553356302_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1508/04/52555553356302_200x100.jpg" title="å¤§ç‰Œå£çº¢ä½è‡³38å…ƒ" alt="å¤§ç‰Œå£çº¢ä½è‡³38å…ƒ" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='308297'>
+<a href="javascript:if(confirm('http://www.beibei.com/martshow/308297.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/martshow/308297.html'" tppabs="http://www.beibei.com/martshow/308297.html" target="_blank">
+<img src="39018390376302_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1508/28/39018390376302_200x100.jpg" title="åœ£å…ƒä¼˜åšå¥¶ç²‰ç‰¹æƒ ä¸“åœº" alt="åœ£å…ƒä¼˜åšå¥¶ç²‰ç‰¹æƒ ä¸“åœº" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='305483'>
+<a href="javascript:if(confirm('http://www.beibei.com/martshow/305483.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/martshow/305483.html'" tppabs="http://www.beibei.com/martshow/305483.html" target="_blank">
+<img src="19927597650973_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1410/10/19927597650973_200x100.jpg" title="è²æ¯”å°¿è£¤å“ç‰Œå›¢" alt="è²æ¯”å°¿è£¤å“ç‰Œå›¢" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='302871'>
+<a href="javascript:if(confirm('http://www.beibei.com/martshow/302871.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/martshow/302871.html'" tppabs="http://www.beibei.com/martshow/302871.html" target="_blank">
+<img src="31192653469971_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1505/26/31192653469971_200x100.jpg" title="çº¸ä¸ºå“è´¨ç”Ÿæ´»" alt="çº¸ä¸ºå“è´¨ç”Ÿæ´»" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='10635'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/10635.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/10635.html'" tppabs="http://global.beibei.com/show/10635.html" target="_blank">
+<img src="42620986149971_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1507/08/42620986149971_200x100.jpg" title="å…°èŠ-æ°´æ¶¦è‚Œè‚¤ æ°´æ¼¾ç”Ÿæ´»" alt="å…°èŠ-æ°´æ¶¦è‚Œè‚¤ æ°´æ¼¾ç”Ÿæ´»" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='12129'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/12129.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/12129.html'" tppabs="http://global.beibei.com/show/12129.html" target="_blank">
+<img src="70781609306302_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1508/25/70781609306302_200x100.jpg" title="AHC-éŸ©å›½æ®¿å ‚çº§ç¾å®¹" alt="AHC-éŸ©å›½æ®¿å ‚çº§ç¾å®¹" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='10130'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/10130.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/10130.html'" tppabs="http://global.beibei.com/show/10130.html" target="_blank">
+<img src="62905033819794_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1503/11/62905033819794_200x100.jpg" title="æŒªå¨å°é±¼-å¤©ç„¶è¿›å£DHA" alt="æŒªå¨å°é±¼-å¤©ç„¶è¿›å£DHA" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='10565'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/10565.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/10565.html'" tppabs="http://global.beibei.com/show/10565.html" target="_blank">
+<img src="62556370569794_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1503/11/62556370569794_200x100.jpg" title="è†³é­”å¸ˆ-ä½è‡³4æŠ˜èµ·" alt="è†³é­”å¸ˆ-ä½è‡³4æŠ˜èµ·" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='13725'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/13725.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/13725.html'" tppabs="http://global.beibei.com/show/13725.html" target="_blank">
+<img src="82748121936302_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1601/13/82748121936302_200x100.jpg" title="æˆ‘ä»¬åªåšå¥½å–çš„å’–å•¡-å¥¢æ–ä¸“åœº" alt="æˆ‘ä»¬åªåšå¥½å–çš„å’–å•¡-å¥¢æ–ä¸“åœº" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+</ul>
+<ul class="m-brand-list m-brand-tommorow" style="display:none;" c-rid="01018">
+<li clog c-emit='show;click[a]' c-et='event' c-etl='306780'>
+<a href="javascript:if(confirm('http://www.beibei.com/martshow/306780.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/martshow/306780.html'" tppabs="http://www.beibei.com/martshow/306780.html" target="_blank">
+<img src="38136588316826_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1703/01/38136588316826_200x100.jpg" title="å®ä¸½èŠ™ å¼•é¢†æ—¶å°šæ½®æµ" alt="å®ä¸½èŠ™ å¼•é¢†æ—¶å°šæ½®æµ" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='305119'>
+<a href="javascript:if(confirm('http://www.beibei.com/martshow/305119.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/martshow/305119.html'" tppabs="http://www.beibei.com/martshow/305119.html" target="_blank">
+<img src="95175376226302_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1509/09/95175376226302_200x100.jpg" title="èƒå–è–ä»ç²¾ç²¹ å·¨è¡¥æ°´" alt="èƒå–è–ä»ç²¾ç²¹ å·¨è¡¥æ°´" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='308234'>
+<a href="javascript:if(confirm('http://www.beibei.com/martshow/308234.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/martshow/308234.html'" tppabs="http://www.beibei.com/martshow/308234.html" target="_blank">
+<img src="22093275459794_200x100.png" tppabs="http://b1.hucdn.com/upload/brand/1405/15/22093275459794_200x100.png" title="60å¹´å…³çˆ±å¦ˆå¦ˆä¿¡èµ–" alt="60å¹´å…³çˆ±å¦ˆå¦ˆä¿¡èµ–" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='285673'>
+<a href="javascript:if(confirm('http://www.beibei.com/martshow/285673.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/martshow/285673.html'" tppabs="http://www.beibei.com/martshow/285673.html" target="_blank">
+<img src="40225006739794_200x100.png" tppabs="http://b1.hucdn.com/upload/brand/1602/29/40225006739794_200x100.png" title="è¿ªå£«å°¼ç©å…·ç‰¹æƒ ä¸“åœº" alt="è¿ªå£«å°¼ç©å…·ç‰¹æƒ ä¸“åœº" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='308855'>
+<a href="javascript:if(confirm('http://www.beibei.com/martshow/308855.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/martshow/308855.html'" tppabs="http://www.beibei.com/martshow/308855.html" target="_blank">
+<img src="71236061339163_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1611/30/71236061339163_200x100.jpg" title="æ¸©å’Œæ´—æŠ¤çˆ±çš„å‘µæŠ¤" alt="æ¸©å’Œæ´—æŠ¤çˆ±çš„å‘µæŠ¤" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='10703'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/10703.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/10703.html'" tppabs="http://global.beibei.com/show/10703.html" target="_blank">
+<img src="63056344549794_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1503/11/63056344549794_200x100.jpg" title="Kose-10åˆ†é’Ÿæ»‹æ¶¦æ¸—" alt="Kose-10åˆ†é’Ÿæ»‹æ¶¦æ¸—" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='12071'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/12071.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/12071.html'" tppabs="http://global.beibei.com/show/12071.html" target="_blank">
+<img src="19582926966302_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1509/14/19582926966302_200x100.jpg" title="è²æ‹‰æ ¼æ…•" alt="è²æ‹‰æ ¼æ…•" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='14596'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/14596.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/14596.html'" tppabs="http://global.beibei.com/show/14596.html" target="_blank">
+<img src="92685306429971_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1506/19/92685306429971_200x100.jpg" title="å¤šèŠ¬-èº«ä½“ç§€å‘æŠ¤ç†ä¸“å®¶" alt="å¤šèŠ¬-èº«ä½“ç§€å‘æŠ¤ç†ä¸“å®¶" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='16113'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/16113.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/16113.html'" tppabs="http://global.beibei.com/show/16113.html" target="_blank">
+<img src="38603101734120_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1702/15/38603101734120_200x100.jpg" title="çœŸéœ²" alt="çœŸéœ²" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+<li clog c-emit='show;click[a]' c-et='event' c-etl='14294'>
+<a href="javascript:if(confirm('http://global.beibei.com/show/14294.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://global.beibei.com/show/14294.html'" tppabs="http://global.beibei.com/show/14294.html" target="_blank">
+<img src="65683626479163_200x100.jpg" tppabs="http://b1.hucdn.com/upload/brand/1605/24/65683626479163_200x100.jpg" title="åŸé‡åŒ»ç”Ÿâ€”æ¯›å­”è§’æ “ç»ˆç»“è€…" alt="åŸé‡åŒ»ç”Ÿâ€”æ¯›å­”è§’æ “ç»ˆç»“è€…" width="80" height="40">
+<div class="bg-opc"></div>
+</a>
+</li>
+</ul>
+<p>
+<a class="m-brand-more m-brand-today-a" href="javascript:if(confirm('http://www.beibei.com/brand/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/brand/'" tppabs="http://www.beibei.com/brand/" target="_blank">æ›´å¤šåœ¨å”®å“ç‰Œ &gt;</a>
+<a class="m-brand-more m-brand-tommorow-a" href="javascript:if(confirm('http://www.beibei.com/brand/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/brand/#tomorrow'" tppabs="http://www.beibei.com/brand/#tomorrow" target="_blank" style="display: none;">æ›´å¤šå“ç‰ŒæŠ¢å…ˆçœ‹ &gt;</a>
+</p>
+</div>
+<div class="m-hotsort">
+<div class="m-hotsort-tit g-f16 g-f-c666 i-icon">çƒ­å–æ’è¡Œæ¦œ</div>
+<div class="m-hotsort-con">
+<ul class="J_sort">
+<li class="current" part="m-sort-dress">ç«¥è£…</li>
+<li part="m-sort-shoes">ç«¥é‹</li>
+<li part="m-sort-toy">ç©å…·</li>
+<li class="br-none" part="m-sort-babythings">ç”¨å“</li>
+</ul>
+<div c-rid="01020" class="m-h-items m-sort-list m-sort-dress">
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2612696.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2612696.html'" tppabs="http://www.beibei.com/detail/p/2612696.html" data-url="http://you.beibei.com/detail/102441486-2612696.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20689989'>
+<img class="fl" src="72763451009271_850x850.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1705/23/72763451009271_850x850.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">ã€å¥½å“è´¨ã€‘å¯ç¥–å„¿å¥³ç«¥å…¬ä¸»è£™2017å¤è£…å„¿ç«¥è¿è¡£è£™è£™å­æŠ«è‚©</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">44.90</span></span>
+<span class="m-price-o">&yen;399</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/3063799.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/3063799.html'" tppabs="http://www.beibei.com/detail/p/3063799.html" data-url="http://you.beibei.com/detail/102540393-3063799.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20886408'>
+<img class="fl" src="00757958834915_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1705/16/00757958834915_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">ã€å¥½å“è´¨ã€‘ã€ç›´é™20å…ƒã€‘é™é‡1wä»¶çˆ†æ¬¾ç”·ç«¥å¤è£…2017å¥—è£…ä¸­å¤§ç«¥éŸ©ç‰ˆçŸ­è¢–ä¸¤ä»¶å¥—</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">35.90</span></span>
+<span class="m-price-o">&yen;299</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/1330665.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/1330665.html'" tppabs="http://www.beibei.com/detail/p/1330665.html" data-url="http://you.beibei.com/detail/102247069-1330665.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20273337'>
+<img class="fl" src="24719768440467_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1703/11/24719768440467_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">AMPL2017å¤æ¬¾ç”·ç«¥å¯çˆ±çŸ­è¢–èƒŒå¸¦è£¤å¥—è£…A</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">33.90</span></span>
+<span class="m-price-o">&yen;159</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/1448046.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/1448046.html'" tppabs="http://www.beibei.com/detail/p/1448046.html" data-url="http://you.beibei.com/detail/102430062-1448046.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20666616'>
+<img class="fl" src="12065620906506_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1705/17/12065620906506_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">ã€ä¸‰ä»¶è£…ã€‘å¤æ¬¾çº¯æ£‰å“ˆè¡£ å®å®çŸ­è¢–è¿ä½“è¡£</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">35.00</span></span>
+<span class="m-price-o">&yen;148</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2827758.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2827758.html'" tppabs="http://www.beibei.com/detail/p/2827758.html" data-url="http://you.beibei.com/detail/102405687-2827758.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20613615'>
+<img class="fl" src="30889181607451_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1705/23/30889181607451_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">ç›¼ç›¼æ ‘ ã€2å¥—è£…ã€‘è–„ç«¹çº¤ç»´å®¶å±…å¥—è£… é•¿è¢–ç©ºè°ƒæœ</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">32.00</span></span>
+<span class="m-price-o">&yen;88</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2712362.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2712362.html'" tppabs="http://www.beibei.com/detail/p/2712362.html" data-url="http://you.beibei.com/detail/102143920-2712362.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20034233'>
+<img class="fl" src="19557903768405_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1703/24/19557903768405_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">2017ç«¥è£…æ˜¥è£…çº±è£™å„¿ç«¥è£™å­å¥³ç«¥è¿è¡£è£™å…¬ä¸»è£™</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">39.90</span></span>
+<span class="m-price-o">&yen;199</span>
+</div>
+</div>
+</a>
+</div>
+<div c-rid="01021" class="m-h-items m-sort-list m-sort-shoes" style="display: none;">
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/1398066.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/1398066.html'" tppabs="http://www.beibei.com/detail/p/1398066.html" data-url="http://www.beibei.com/detail/303897-1398066.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20694700'>
+<img class="fl" src="75091768410075_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1705/18/75091768410075_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">æœ¨æœ¨å±‹å‡‰é‹ 17å¤å­£æ–°å“ å®å®æ²™æ»©é‹é˜²æ»‘æœºèƒ½é‹</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">47.00</span></span>
+<span class="m-price-o">&yen;238</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/786857.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/786857.html'" tppabs="http://www.beibei.com/detail/p/786857.html" data-url="http://you.beibei.com/detail/102163337-786857.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20085376'>
+<img class="fl" src="17711295009530_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1703/03/17711295009530_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">èœ¡ç¬”å°æ–°ç«¥é‹ç”·ç«¥å¥³ç«¥ä¼‘é—²å°ç™½é‹å­¦æ­¥é‹</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">32.90</span></span>
+<span class="m-price-o">&yen;129</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/1332365.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/1332365.html'" tppabs="http://www.beibei.com/detail/p/1332365.html" data-url="http://you.beibei.com/detail/102143939-1332365.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20034272'>
+<img class="fl" src="07625416963386_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1703/03/07625416963386_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">å°ç‰›äºº2017å¤1-4å²å®å®åŒ…å¤´å‡‰é‹è¿·å½©å‡‰é‹</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">39.90</span></span>
+<span class="m-price-o">&yen;159</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/518038.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/518038.html'" tppabs="http://www.beibei.com/detail/p/518038.html" data-url="http://www.beibei.com/detail/302065-518038.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20638561'>
+<img class="fl" src="35945172035787_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1608/12/35945172035787_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">Babyfeetå¤å­£æ–°æ¬¾çœŸçš®å®å®å‡‰é‹åŒ…å¤´å­¦æ­¥é‹è½¯åº•å©´å„¿é‹</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">38.70</span></span>
+<span class="m-price-o">&yen;236</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/1115349.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/1115349.html'" tppabs="http://www.beibei.com/detail/p/1115349.html" data-url="http://you.beibei.com/detail/102179787-1115349.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20121496'>
+<img class="fl" src="81645937710075_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1705/10/81645937710075_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">æœ¨æœ¨å±‹å¤å­£å‡‰é‹ é˜²æ»‘æœºèƒ½é‹ å„¿ç«¥ç”·å¥³å­¦æ­¥é‹</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">49.90</span></span>
+<span class="m-price-o">&yen;298</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2640169.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2640169.html'" tppabs="http://www.beibei.com/detail/p/2640169.html" data-url="http://you.beibei.com/detail/102145305-2640169.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20037674'>
+<img class="fl" src="24922666289468_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1704/01/24922666289468_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">å“ˆä¹å…¶é•‚ç©ºå®å®å‡‰é‹å¯çˆ±è˜‘è‡0-2å²å­¦æ­¥é‹</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">32.80</span></span>
+<span class="m-price-o">&yen;98</span>
+</div>
+</div>
+</a>
+</div>
+<div c-rid="01022" class="m-h-items m-sort-list m-sort-toy" style="display: none;">
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2635312.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2635312.html'" tppabs="http://www.beibei.com/detail/p/2635312.html" data-url="http://you.beibei.com/detail/102151400-2635312.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20053121'>
+<img class="fl" src="82077377074788_500x500.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1703/15/82077377074788_500x500.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">è´çˆµå„¿ç«¥æ»‘è¡Œè½¦é˜²ç¿»æŒ–åœŸæœºå¸¦ç¯å…‰éŸ³ä¹æŒ–æ˜æœºæºœæºœè½¦</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">39.90</span></span>
+<span class="m-price-o">&yen;109</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2291273.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2291273.html'" tppabs="http://www.beibei.com/detail/p/2291273.html" data-url="http://you.beibei.com/detail/101802236-2291273.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='18666510'>
+<img class="fl" src="10956871301172_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1612/20/10956871301172_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">å¥¥æ™ºå˜‰å„¿ç«¥é¥æ§è½¦18CMå……ç”µç¿»æ–—ç¿»æ»šç‰¹æŠ€è½¦</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">34.90</span></span>
+<span class="m-price-o">&yen;99</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2883141.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2883141.html'" tppabs="http://www.beibei.com/detail/p/2883141.html" data-url="http://you.beibei.com/detail/102404917-2883141.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20612095'>
+<img class="fl" src="62105647453412_750x750.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1704/14/62105647453412_750x750.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">å„¿ç«¥æ‰­æ‰­è½¦å››è½®å®å®æ»‘è¡Œè½¦æºœæºœè½¦å­¦æ­¥ç©å…·ç«¥è½¦å¯åäººå¸¦éŸ³ä¹1-3å²</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">39.00</span></span>
+<span class="m-price-o">&yen;180</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2069134.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2069134.html'" tppabs="http://www.beibei.com/detail/p/2069134.html" data-url="http://you.beibei.com/detail/101762526-2069134.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='18433374'>
+<img class="fl" src="01010405805724_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1612/20/01010405805724_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">110ä»¶å¥—ç£åŠ›ç‰‡ç©å…·æ‹‰æç§¯æœ¨ é€æ”¶çº³ç®±+æ•™ç§‘ä¹¦.</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">79.00</span></span>
+<span class="m-price-o">&yen;138</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2529217.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2529217.html'" tppabs="http://www.beibei.com/detail/p/2529217.html" data-url="http://you.beibei.com/detail/101935698-2529217.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='19450319'>
+<img class="fl" src="84637032087576_600x600.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1704/12/84637032087576_600x600.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">åå“ºå„¿ç«¥æ‰­æ‰­è½¦å¸¦éŸ³ä¹é™éŸ³è½®å®å®æ»‘è¡Œè½¦</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">69.00</span></span>
+<span class="m-price-o">&yen;138</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2542433.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2542433.html'" tppabs="http://www.beibei.com/detail/p/2542433.html" data-url="http://you.beibei.com/detail/101936663-2542433.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='19454847'>
+<img class="fl" src="84144712967576_600x600.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1704/12/84144712967576_600x600.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">åå“ºå„¿ç«¥æ‰­æ‰­è½¦å¸¦éŸ³ä¹é™éŸ³è½®2-6å²å®å®æ»‘è¡Œè½¦</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">69.00</span></span>
+<span class="m-price-o">&yen;138</span>
+</div>
+</div>
+</a>
+</div>
+<div c-rid="01023" class="m-h-items m-sort-list m-sort-babythings" style="display: none;">
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2246598.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2246598.html'" tppabs="http://www.beibei.com/detail/p/2246598.html" data-url="http://you.beibei.com/detail/101495761-2246598.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='16782205'>
+<img class="fl" src="18514548417160_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1612/07/18514548417160_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">ã€6å±‚çº¯æ£‰åŠ åšã€‘å©´å„¿æµ´å·¾å®å®çº±å¸ƒå„¿ç«¥æ¯›å·¾è¢«</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">49.00</span></span>
+<span class="m-price-o">&yen;178</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2394067.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2394067.html'" tppabs="http://www.beibei.com/detail/p/2394067.html" data-url="http://you.beibei.com/detail/101989199-2394067.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='19617344'>
+<img class="fl" src="46463054597160_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1702/09/46463054597160_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">ã€6å±‚çº¯æ£‰åŠ åšã€‘å©´å„¿å„¿ç«¥çº±å¸ƒç¡è¢‹å®å®é˜²è¸¢è¢«</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">39.00</span></span>
+<span class="m-price-o">&yen;168</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/1488283.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/1488283.html'" tppabs="http://www.beibei.com/detail/p/1488283.html" data-url="http://you.beibei.com/detail/102420358-1488283.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20647101'>
+<img class="fl" src="86356645878401_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1705/19/86356645878401_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">è´å¾—åŠ› Aå¤§å·å©´å„¿æµ´ç›†å®å®æ´—æ¾¡ç›†å„¿ç«¥æ²æµ´ç›†</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">69.00</span></span>
+<span class="m-price-o">&yen;188</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/1922396.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/1922396.html'" tppabs="http://www.beibei.com/detail/p/1922396.html" data-url="http://you.beibei.com/detail/101974414-1922396.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='19573247'>
+<img class="fl" src="22662916980587_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1612/20/22662916980587_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">å°åœŸè±†PPSUå¥¶ç“¶å®½å£å¥¶ç“¶å¸¦æ‰‹æŸ„å¸ç®¡å¥¶ç“¶</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">59.00</span></span>
+<span class="m-price-o">&yen;138</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/2104921.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/2104921.html'" tppabs="http://www.beibei.com/detail/p/2104921.html" data-url="http://you.beibei.com/detail/101918836-2104921.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='19400678'>
+<img class="fl" src="31476870222426_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1702/07/31476870222426_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">å­åˆ å©´å„¿ç«¥æŸ æª¬æ¤ç‰©æŠ¤æ‰‹æ´—è¡£çš‚80g*20å—</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">32.90</span></span>
+<span class="m-price-o">&yen;89</span>
+</div>
+</div>
+</a>
+<a class="m-items-con clearfix detail-url-click" href="javascript:if(confirm('http://www.beibei.com/detail/p/502998.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/detail/p/502998.html'" tppabs="http://www.beibei.com/detail/p/502998.html" data-url="http://www.beibei.com/detail/303819-502998.html" target="_blank" clog c-emit='show;click' c-et='item' c-etl='20691794'>
+<img class="fl" src="72336800584810_800x800.jpg!100x100.jpg" tppabs="http://b1.hucdn.com/upload/item/1509/01/72336800584810_800x800.jpg!100x100.jpg" width="70" height="70">
+<div class="m-items-info fl">
+<div class="m-tit">è´äº² è‡ªç„¶å®æ„Ÿå®½å£å¾„å¥¶å˜´(ä¸¤åªè£…)-Lå·</div>
+<div class="price m-price">
+<span class="m-price-n">&yen;<span class="g-f14 g-fw">42.80</span></span>
+<span class="m-price-o">&yen;64</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="shows view-EventList clearfix" c-rid="01001">
+<div class="pagination view-EventPagination" style="display:none;background:#F3F3F3;border:1px solid #E8E8E8;padding:20px 0;"></div>
+</div>
+<div class="J_load-more load-more">ç‚¹å‡»å±•å¼€æ›´å¤šç²¾å½©<i class="iconfont">î˜</i></div>
+</div>
+</div>
+<div class="fixed-botbg hidden">
+<a href="javascript:;"><img src=""></a>
+<span class="close-btn view-FixedBotbgcloseBtn"></span>
+</div>
+<div class="m-botbg"><img src="upload_8c117b025f439e5a9b60d325d7980b20_1920x148.png" tppabs="http://b0.hucdn.com/party/2016/5/upload_8c117b025f439e5a9b60d325d7980b20_1920x148.png"></div>
+<div class="service-desc">
+<div class="wrapper">
+<div class="tac">
+<div class="help-quick-link clearfix">
+<dl class="no-l-border">
+<dt><i class="iconfont">&#xf005f;</i> æ–°æ‰‹æŒ‡å—</dt>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/register_and_account.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/register_and_account.html#member-reg'" tppabs="http://www.beibei.com/support/help/register_and_account.html#member-reg">â€¢ æ³¨å†Œç™»å½•</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/qiang_gou.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/qiang_gou.html'" tppabs="http://www.beibei.com/support/help/qiang_gou.html">â€¢ æŠ¢è´­å•†å“</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/cart_operate.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/cart_operate.html'" tppabs="http://www.beibei.com/support/help/cart_operate.html">â€¢ è´­ç‰©è½¦æ“ä½œ</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/single_payment.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/single_payment.html'" tppabs="http://www.beibei.com/support/help/single_payment.html">â€¢ ä¸‹å•æ”¯ä»˜</a></dd>
+</dl>
+<dl>
+<dt><i class="iconfont">&#xf0130;</i> å¸¸è§é—®é¢˜</dt>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/faq.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/faq.html#hotFaq'" tppabs="http://www.beibei.com/support/help/faq.html#hotFaq">â€¢ çƒ­é—¨å¸¸è§é—®é¢˜</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/faq.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/faq.html#refundFaq'" tppabs="http://www.beibei.com/support/help/faq.html#refundFaq">â€¢ é€€è´§/é€€æ¬¾ç›¸å…³</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/frequently_qa_3.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/frequently_qa_3.html'" tppabs="http://www.beibei.com/support/help/frequently_qa_3.html">â€¢ å‘è´§ç›¸å…³</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/faq.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/faq.html#tradingRuleFaq'" tppabs="http://www.beibei.com/support/help/faq.html#tradingRuleFaq">â€¢ å¹³å°äº¤æ˜“è§„åˆ™</a></dd>
+</dl>
+<dl>
+<dt><i class="iconfont">&#xf00ec;</i> è´¦å·ç®¡ç†</dt>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/register_and_account.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/register_and_account.html#member-reg'" tppabs="http://www.beibei.com/support/help/register_and_account.html#member-reg">â€¢ ä¼šå‘˜æ³¨å†Œ</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/register_and_account.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/register_and_account.html#password-manage'" tppabs="http://www.beibei.com/support/help/register_and_account.html#password-manage">â€¢ å¯†ç ç®¡ç†</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/frequently_qa_1.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/frequently_qa_1.html'" tppabs="http://www.beibei.com/support/help/frequently_qa_1.html">â€¢ æŠ•è¯‰ä¸¾æŠ¥</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/register_and_account.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/register_and_account.html#unhealthy-manage'" tppabs="http://www.beibei.com/support/help/register_and_account.html#unhealthy-manage">â€¢ ä¸è‰¯ä¿¡æ¯å¤„ç†</a></dd>
+</dl>
+<dl>
+<dt><i class="iconfont">&#xf0280;</i> æ”¯ä»˜ç›¸å…³</dt>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/online_payment_2.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/online_payment_2.html'" tppabs="http://www.beibei.com/support/help/online_payment_2.html">â€¢ åœ¨çº¿æ”¯ä»˜</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/online_payment_1.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/online_payment_1.html'" tppabs="http://www.beibei.com/support/help/online_payment_1.html">â€¢ ä½™é¢æ”¯ä»˜</a></dd>
+</dl>
+<dl>
+<dt><i class="iconfont">&#xf0134;</i> é…é€ç›¸å…³</dt>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/distribution_1.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/distribution_1.html'" tppabs="http://www.beibei.com/support/help/distribution_1.html">â€¢ é…é€è¯´æ˜</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/distribution_2.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/distribution_2.html'" tppabs="http://www.beibei.com/support/help/distribution_2.html">â€¢ ç‰©æµä¿¡æ¯</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/distribution_3.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/distribution_3.html'" tppabs="http://www.beibei.com/support/help/distribution_3.html">â€¢ éªŒè´§ç­¾æ”¶</a></dd>
+</dl>
+<dl>
+<dt><i class="iconfont">&#xf011b;</i> æ¶ˆè´¹è€…ä¿éšœ</dt>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/service_1.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/service_1.html'" tppabs="http://www.beibei.com/support/help/service_1.html">â€¢ é€€è´§æ”¿ç­–</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/service_2.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/service_2.html'" tppabs="http://www.beibei.com/support/help/service_2.html">â€¢ é€€è´§æµç¨‹</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/service_3.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/service_3.html'" tppabs="http://www.beibei.com/support/help/service_3.html">â€¢ é€€è´§æ–¹å¼å’Œæ—¶æ•ˆ</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/after_sale.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/after_sale.html#tradingSave'" tppabs="http://www.beibei.com/support/help/after_sale.html#tradingSave">â€¢ äº¤æ˜“å®‰å…¨ä¿éšœ</a></dd>
+<dd><a target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/after_sale.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/after_sale.html#marginSystem'" tppabs="http://www.beibei.com/support/help/after_sale.html#marginSystem">â€¢ ä¿è¯é‡‘åˆ¶åº¦</a></dd>
+</dl>
+<dl class="sns no-r-border">
+<dd>
+<p class="pink">å…³æ³¨ç¤¾åŒº<br /><span class="c-999">ä¼˜æƒ ç‰¹å–æ—©çŸ¥é“</span></p>
+<p><a class="sns-link" target="_blank" href="javascript:if(confirm('http://weibo.com/u/3963155532  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://weibo.com/u/3963155532'" tppabs="http://weibo.com/u/3963155532">&nbsp;</a><a class="sns-link" target="_blank" href="javascript:if(confirm('http://user.qzone.qq.com/2643291899  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://user.qzone.qq.com/2643291899'" tppabs="http://user.qzone.qq.com/2643291899">&nbsp;</a></p>
+</dd>
+</dl>
+</div>
+<div style="border-top: 1px solid #FDFDFD">
+<a ams rid="2" href="javascript:;" style="display:block;" target="_blank"><img src="blank.png" tppabs="http://b0.hucdn.com/img/common/blank.png" width="0" height="0" /></a>
+</div>
+</div>
+</div>
+</div>
+<script>
+    window.pageData = window.pageData || {};
+    pageData.downLevel = 0;
+
+</script>
+</div>
+<div id="footer" style="margin-top: 0px">
+<div class="footer-nav">
+<a rel="nofollow" href="index.htm" tppabs="http://www.beibei.com/">é¦–é¡µ</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.husor.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.husor.com/'" tppabs="http://www.husor.com/">å…³äºè´è´</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://seller.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://seller.beibei.com/'" tppabs="http://seller.beibei.com/">å•†å®¶å…¥é©»</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/guarantee/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/guarantee/'" tppabs="http://www.beibei.com/guarantee/">æ­£å“ä¿è¯</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.husor.com/hr/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.husor.com/hr/'" tppabs="http://www.husor.com/hr/">äººæ‰æ‹›è˜</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/kf.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/kf.html'" tppabs="http://www.beibei.com/support/help/kf.html">è”ç³»æˆ‘ä»¬</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/index.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/index.html'" tppabs="http://www.beibei.com/support/help/index.html">å¸®åŠ©ä¸­å¿ƒ</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/link.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/link.html'" tppabs="http://www.beibei.com/support/help/link.html">å‹æƒ…é“¾æ¥</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/app/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/app/'" tppabs="http://www.beibei.com/app/">æ‰‹æœºå®¢æˆ·ç«¯</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/kf.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/kf.html'" tppabs="http://www.beibei.com/support/help/kf.html">å®¢æœåœ¨çº¿</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/quick/1503/public.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/quick/1503/public.html'" tppabs="http://www.beibei.com/quick/1503/public.html">è´è´å…¬ç›Š</a> |
+<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/quick/1603/11-quality.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/quick/1603/11-quality.html'" tppabs="http://www.beibei.com/quick/1603/11-quality.html">å“è´¨å¥åº·</a> |
+<a target="_blank" href="javascript:if(confirm('http://www.yuerbao.com/forum/index  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.yuerbao.com/forum/index'" tppabs="http://www.yuerbao.com/forum/index">è‚²å„¿ç¤¾åŒº</a>
+<a class="hidden" href="javascript:if(confirm('http://webscan.360.cn/index/checkwebsite/url/www.beibei.com  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://webscan.360.cn/index/checkwebsite/url/www.beibei.com'" tppabs="http://webscan.360.cn/index/checkwebsite/url/www.beibei.com" name="c49c38b3d39d1adc2328cfcce629548a">360ç½‘ç«™å®‰å…¨æ£€æµ‹å¹³å°</a>
+</div>
+<div class="footer-content">
+<div class="wrapper">
+<p>æµ™ICPå¤‡12005806å· |
+é£Ÿå“æµé€šè®¸å¯è¯ï¼šSP3301041510054925 |
+å‡ºç‰ˆç‰©ç»è¥è®¸å¯è¯ï¼šæ–°å‡ºå‘é›¶å­—ç¬¬00086å·</p>
+<p class="mt-8">&copy; 2014-2017 <a style="color: #999" href="javascript:if(confirm('http://www.husor.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.husor.com/'" tppabs="http://www.husor.com/" target="_blank">è´è´é›†å›¢ </a>All Rights Reserved. å®¢æœçƒ­çº¿ï¼š10107788</p>
+<div class="mt-20">
+<a href="javascript:if(confirm('https://ss.knet.cn/verifyseal.dll?sn=e16072233010064201bhd4000000&comefrom=trust&trustKey=dn&trustValue=www.beibei.com  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://ss.knet.cn/verifyseal.dll?sn=e16072233010064201bhd4000000&comefrom=trust&trustKey=dn&trustValue=www.beibei.com'" tppabs="https://ss.knet.cn/verifyseal.dll?sn=e16072233010064201bhd4000000&comefrom=trust&trustKey=dn&trustValue=www.beibei.com" target="_blank" rel="nofollow"><img style="width:90px; height:32px" src="upload_37b07600c833c0678cfe99a29ab00f1f_127x47.png" tppabs="http://b0.hucdn.com/party/2016/8/upload_37b07600c833c0678cfe99a29ab00f1f_127x47.png" border="0" /></a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:if(confirm('https://search.szfw.org/cert/l/CX20140613008216008256  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://search.szfw.org/cert/l/CX20140613008216008256'" tppabs="https://search.szfw.org/cert/l/CX20140613008216008256" target="_blank" rel="nofollow"><img src="cxwz.png" tppabs="http://b0.hucdn.com/img/common/cxwz.png" /></a>
+<a href="javascript:;" rel="nofollow"><img src="picc.png" tppabs="http://b0.hucdn.com/img/common/picc.png" border="0" /></a>
+<a href="javascript:if(confirm('http://122.224.75.236/wzba/login.do?method=hdurl&doamin=http://www.beibei.com&id=330104000229884&SHID=1223.0AFF_NAME=com.rouger.gs.main.UserInfoAff&AFF_ACTION=qyhzdetail&PAGE_URL=ShowDetail  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://122.224.75.236/wzba/login.do?method=hdurl&doamin=http://www.beibei.com&id=330104000229884&SHID=1223.0AFF_NAME=com.rouger.gs.main.UserInfoAff&AFF_ACTION=qyhzdetail&PAGE_URL=ShowDetail'" tppabs="http://122.224.75.236/wzba/login.do?method=hdurl&doamin=http://www.beibei.com&id=330104000229884&SHID=1223.0AFF_NAME=com.rouger.gs.main.UserInfoAff&AFF_ACTION=qyhzdetail&PAGE_URL=ShowDetail" rel="nofollow" target="_blank"><img src="hzgs.png" tppabs="http://b0.hucdn.com/img/common/hzgs.png" /></a>
+</div>
+</div>
+</div>
+</div>
+<div class="side-panel" ba-ins="fn.repairSidePanel">
+<div title="è´­ç‰©è½¦" data-url="http://trade.beibei.com/cart/mine.html" id="sidebar-cart" class="side-panel-item view-SideBarCartTrigger">
+<div class="view-SideBarCartTriggerBtn side-panel-item-wrap"></div>
+<div class="view-SideBarCart side-panel-item-cart" style="width:350px;"></div><i class="iconfont">&#xf0179;</i><span class="notify"><em class="cart-num">0</em><i class="iconfont">&#xf018e;</i></span>
+</div>
+<div title="æ‰‹æœºAPP" class="side-panel-item view-SidePhoneApp side-panel-App">
+<div class="side-panel-phone">
+<p>ä¸‹è½½æ‰‹æœºAPP</p>
+<p>éšæ—¶éšåœ°çœ‹ä¸Šæ–°</p>
+<img src="40450807220001_158x158.jpg" tppabs="http://b1.hucdn.com/upload/prom/1411/28/40450807220001_158x158.jpg">
+</div>
+<i class="iconfont">&#xf003f;</i>
+</div>
+<a href="javascript:if(confirm('http://www.beibei.com/support/help/frequently_qa_1.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/frequently_qa_1.html'" tppabs="http://www.beibei.com/support/help/frequently_qa_1.html" title="å®¢æœåœ¨çº¿" ba-ins="click~kf" id="kfzx" class="side-panel-item"><i class="iconfont tip-hide">&#xe621;</i><span class="tip-txt hidden">å®¢æœåœ¨çº¿</span></a>
+<div title="å›åˆ°é¡¶éƒ¨" ba-ins="click~backToTop" id="elevator" class="side-panel-item"><i class="iconfont tip-hide">&#xf016f;</i><span class="tip-txt hidden">å›åˆ°é¡¶éƒ¨</span></div>
+</div>
+<script type="text/javascript" src="isp_lib-c413a85566m.js" tppabs="http://st.beibei.com/static/build/js/isp_lib-c413a85566m.js"></script>
+<script src="homelib.js" tppabs="http://st.beibei.com/static/build/js/690286da71m/homelib.js"></script>
+<script type="text/javascript" src="homebase.js" tppabs="http://st.beibei.com/static/build/js/8ac592096em/homebase.js"></script>
+<script type="text/javascript">
+                var seaJsPath = 'home_index.js'/*tpa=http://st.beibei.com/static/build/js/a5cca6bc27m/home_index.js*/;
+                seaJsPath = seaJsPath.slice(0,seaJsPath.lastIndexOf('/')) + '/';
+                seajs.config({
+                    base:seaJsPath
+                });
+                seajs.use('home_index.js'/*tpa=http://st.beibei.com/static/build/js/a5cca6bc27m/home_index.js*/)
+            </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        if (typeof(g) != 'undefined' && g.__gm__ && g.__gm__.length) {
+            $.each(g.__gm__, function (index, funcCall) {
+                funcCall = funcCall ? funcCall.slice(0, -2) : ''; // åŸæ¥ç”¨evalå®ç°çš„  å­—ç¬¦ä¸²ä¼ è¿›æ¥ç±»ä¼¼ 'setMemberGradeLogo()'
+                if ( funcCall && (funcCall = window[funcCall] ) ) {
+                    funcCall.call(window, undefined);
+                }
+            });
+        }
+    });
+</script>
+<script type="text/javascript" id="bdshare_js" data="type=button"></script>
+<script type="text/javascript" id="bdshell_js"></script> </body>
+</html>

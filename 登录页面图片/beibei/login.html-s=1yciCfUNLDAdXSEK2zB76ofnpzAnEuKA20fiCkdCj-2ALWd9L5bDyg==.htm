@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>è´è´ç½‘-ä¸­å›½é¢†å…ˆçš„æ¯å©´ç‰¹å–ç½‘ç«™</title>
+            <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet"
+          href="homecsslib.css" tppabs="https://st.beibei.com/static/build/css/30aa5a5a2bm/homecsslib.css"
+          type="text/css" media="all"/>
+
+                                        <link rel="stylesheet" type="text/css" media="all"
+                      href="member_login.css" tppabs="https://st.beibei.com/static/build/css/ae71ce4724m/member_login.css"/>
+                        
+    <script type="text/javascript">
+        (function() {
+            window.devMode = ('' === '1') ? true : false ;
+
+            var ua = navigator.userAgent,
+                href = location.href,
+                url = '',
+                matched,
+                utm = 'utm_source=',
+                utm1 = '',
+                utm2 = '',
+                utmSource = null,
+                invitex = null,
+                search = location.search,
+                firstLogin = getCookie('firstLogin'),
+                isSeller = href.search('http://seller.beibei.com/') !== -1;
+
+            var getUrlParam = function (name) {
+                var search = window.location.search,
+                    matched = search.slice(1).match(new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i'));
+                return search.length ? (matched && matched[2]) : null;
+            };
+
+            if ( !isSeller && ('' === firstLogin) &&
+                (ua.match(/Android/i) || 
+                ua.match(/WebOs/i) ||
+                ua.match(/iPhone/i) ||
+                ua.match(/iPod/i) || 
+                ua.match(/BlackBerry/i) ||
+                ua.match(/MicroMessenger/i) ||
+                ua.match(/windows mobile/i) || 
+                ua.match(/Windows Phone/i)) && 
+                'wap' !== getUrlParam('from') ) { // æœ€åçš„åˆ¤æ–­æ”¾æœ€å æ¥æºh5
+
+                utmSource = getUrlParam('utm_source');
+                invitex = getUrlParam('invitex');
+                utm = utmSource ? (utm + utmSource) : '';
+                utm1 = utm ? '?' + utm : utm;
+                utm2 = utm ? '&' + utm : utm;
+
+                if (invitex) { // å¥½å‹é‚€è¯·
+                    url = 'http://m.beibei.com/app/invitation/register.html?code=' + invitex;
+                } else if( (matched = href.match(/beibei\.com\/martshow\/(\d+).html/) ) ){ // ä¸“åœºåˆ—è¡¨é¡µ
+                    url = 'http://m.beibei.com/list/list.html?eventId=' + matched[1] + utm2;
+                } else if ( ( matched = href.match(/global\.beibei\.com\/detail\/(\d+)-(\d+).html/) ) ){ // æµ·å¤–è´­è¯¦æƒ…
+                    url = 'http://m.beibei.com/oversea/oversea-detail.html?event_id=' + matched[1] + '&product_id=' + matched[2] + utm2;
+                } else if ( ( matched = href.match(/www\.beibei\.com\/detail\/(\d+)-(\d+).html/) ) ) { // å•†å“è¯¦æƒ…é¡µ
+                    url = 'http://m.beibei.com/detail/detail.html?event_id=' + matched[1] + '&product_id=' + matched[2] + utm2;
+                } else if ( ( matched = href.match(/you\.beibei\.com\/detail\/(\d+)-(\d+).html/) ) ){ // é™é‡è´­è¯¦æƒ…
+                    url = 'http://m.beibei.com/tuan/tuan-detail.html?event_id=' + matched[1] + '&product_id=' + matched[2] + utm2;
+                } else if ( (matched = href.match(/global\.beibei\.com/) ) ) { // æµ·å¤–è´­
+                    url = 'http://m.beibei.com/oversea/oversea-index.html' + utm1;
+                } else if ( (matched = href.match(/you\.beibei\.com/) ) ) { // é™é‡è´­
+                    url = 'http://m.beibei.com/tuan/tuan-index.html' + utm1;
+                } else if ( (matched = href.match(/\.beibei\.com\/event\/(xinrenli|laokeli)\/index\.html/) ) ) { // æ–°äººç¤¼ è€å®¢ç¤¼
+                    url = 'http://m.beibei.com/party/2014/10/' + matched[1] + '.html';
+                } else if ( href.search(/t\.beibei\.com|newsletter\.beibei\.com|\.beibei\.com\/member\/email_verify\.html|beibei\.com\/member\/passwd_init\.html|d\.beibei\.com\/outer\/oauth\/erp\.html/gi) === -1 ) { // éªŒè¯
+                    url = 'http://m.beibei.com/' + utm1;
+                }
+
+                if (url) {
+                    window.location.replace(url);
+                }
+            }
+        })();
+
+        function getCookie(c_name) {
+            var c_start,
+                c_end;
+
+ã€€ã€€ã€€ã€€if (document.cookie.length>0) {
+            ã€€ã€€ã€€ã€€ã€€ã€€c_start = document.cookie.indexOf(c_name + "=")
+ã€€ã€€ã€€ã€€ã€€ã€€if (c_start != -1) {
+                ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€c_start = c_start + c_name.length+1;
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€c_end = document.cookie.indexOf(";", c_start);
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€if (c_end == -1) c_end = document.cookie.length;ã€€ã€€
+                ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€return unescape(document.cookie.substring(c_start, c_end));
+ã€€ã€€ã€€ã€€ã€€ã€€}
+ã€€ã€€ã€€ã€€}
+
+ã€€ã€€ã€€ã€€return '';
+ã€€ã€€}
+    </script>
+
+    <script type="text/javascript">
+        g = {};	g.__d__ = "1495541495";
+        g.__gm__ = new Array();
+        g.__b__ = "aHR0cDovL3d3dy5iZWliZWkuY29tLw==";
+        g.__t__ = "ff9f16c960365fe4e1b873bb11e584cc";
+        g.__cookieDomain__ = "https://login.beibei.com/member/.beibei.com".substring(1);
+        isIE = !!window.ActiveXObject;
+        isIE6 = isIE&&!window.XMLHttpRequest;
+        isIE8 = isIE&&!!document.documentMode;
+        isIE7 = isIE&&!isIE6&&!isIE8;
+        function call_reg(call) {
+            g.__gm__.push(call);
+        }
+
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.defer=1;a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','analytics.js'/*tpa=https://www.google-analytics.com/analytics.js*/,'ga');
+
+        ga('create', 'UA-49983298-1', 'https://login.beibei.com/member/beibei.com');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+
+        ga('require', 'ecommerce', 'ecommerce.js'/*tpa=https://login.beibei.com/member/ecommerce.js*/);
+        
+
+                var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "hm.js-2f9c2192a3db990ee9e63707ba0ba1ed"/*tpa=https://hm.baidu.com/hm.js?2f9c2192a3db990ee9e63707ba0ba1ed*/;
+            hm.defer = 1;
+            hm.async = 1;
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+            </script>
+    <link rel="shortcut icon" type="image/x-icon" href="//b0.hucdn.com/img/favicon.ico" media="screen" />
+    <link rel="apple-touch-icon" href="//b0.hucdn.com/img/common/apple_icon.png" />
+
+    </head>
+<script>
+    var pageData = {},
+        pageId = 'member/login';
+</script>
+<body>
+    <!-- å¤´éƒ¨ -->
+    <div class="m-wrapper-1080 m-mb-header">
+    <div class="f-fl">
+        <a class="mb-main-logo" href="javascript:if(confirm('http://www.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/'" tppabs="http://www.beibei.com/" title="ä¹°æ¯å©´ä¸Šè´è´"></a>
+    </div>
+    <div class="f-fr">
+        <a class="mb-guarantee-logo" href="javascript:if(confirm('http://www.beibei.com/guarantee/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/guarantee/'" tppabs="http://www.beibei.com/guarantee/" title="è´è´æ­£å“ä¿è¯-å…¨éƒ¨æ­£å“,å…¨åœºåŒ…é‚®,7å¤©æ— ç†ç”±é€€è´§-è´è´"></a>
+    </div>
+</div>
+    <!-- å†…å®¹åŒº -->
+    
+<link type="text/css" href="nc.css-t=1495541495000.css" tppabs="https://g.alicdn.com/sd/ncpc/nc.css?t=1495541495000" rel="stylesheet"/>
+<script type="text/javascript" src="nc.js-t=1495541495000" tppabs="https://g.alicdn.com/sd/ncpc/nc.js?t=1495541495000"></script>
+
+<!-- æ­¤æ®µå¿…é¡»è¦å¼•å…¥ -->
+<div id="_umfp" style="display:inline;width:1px;height:1px;overflow:hidden"></div>
+<!-- å¼•å…¥ç»“æŸ -->
+
+<div class="m-wrapper-1080 m-mb-content">
+
+    <!-- å·¦ä¾§å¹¿å‘Šä½ -->
+    <div class="fl m-mb-amscont">
+        <!-- <a href="http://www.beibei.com/app/" title="æ‘‡ä¸€æ‘‡ èµ¢è´å£³ è´è´æ‰‹æœºå®¢æˆ·ç«¯ ä¸‹å•é€çº¢åŒ…" class="link-default"></a> -->
+        <a ams rid="223" href="javascript:;" style="position:absolute;top:0;left:0;" target="_blank"><img src="blank.png" tppabs="https://b0.hucdn.com/img/common/blank.png" width="0" height="0" /></a>
+    </div>
+
+    <!-- å³ä¾§è¾“å…¥åŒºåŸŸ -->
+    <div class="fr m-ipt-cont">
+        <form action="https://login.beibei.com/member/login.html?s=1yciCfUNLDA9tlXALqFnpW50IMcsFmMNR%2BY1Srb0bo%2BALWd9L5bDyg%3D%3D" class="m-ipt-area J_loginForm" method="post" accept-charset="utf-8"><div style="display:none">
+<input type="hidden" name="hxcsrf" value="ff9f16c960365fe4e1b873bb11e584cc" />
+</div>
+        <input type="hidden" name="sign" value="X/5fzkcn7L23VC++a1MdDJ5/9usYzn7EGucFMgR/uJIn1IzuDJgAnD4gTM2TLR8S4Bj3zb4RVnx1+V5c1w5s+w==" />
+        <input type="hidden" name="done" value="" />
+        <input type="hidden" name="rams_device_id" id="rams_device_id" value="" />
+
+        <input type='hidden' id='csessionid' name='csessionid'/>
+        <input type='hidden' id='sig' name='sig' class='J_iptSwipe'/>
+        <input type='hidden' id='token' name='token'/>
+        <input type='hidden' id='scene' name='scene'/>
+
+        <div class="area-title">
+                <span class="f-fr ipt-register">
+                    <span>è¿˜æ²¡è´¦å·ï¼Ÿ</span>
+                    <a class="u-hp-target" href="javascript:if(confirm('https://login.beibei.com/member/register.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://login.beibei.com/member/register.html'" tppabs="https://login.beibei.com/member/register.html">ç«‹å³æ³¨å†Œ</a>
+                </span>
+            ç™»å½•è´è´
+        </div>
+        
+        <div class="ipt-group">
+            <label class="group-label J_groupLabel">
+                    <span class="identi user">
+                        <!--<i class="iconfont">&#xf012d;</i>-->
+                    </span>
+                <input type="text" class="ipt-input J_iptUsername" placeholder="æ‚¨çš„æ‰‹æœºå· / é‚®ç®±" name="username" value="" tabindex="1" />
+            </label>
+            <div class="single-notice J_singleNotice" data-error=""></div>
+        </div>
+        <div class="ipt-group">
+            <label class="group-label J_groupLabel">
+                    <span class="identi lock">
+                        <!--<i class="iconfont">&#xf00c9;</i>-->
+                    </span>
+                <input type="password" class="ipt-input J_iptPasswd" maxlength="16" placeholder="å¯†ç " name="passwd" value="" tabindex="2" />
+            </label>
+            <div class="single-notice J_singleNotice" data-error=""></div>
+        </div>
+        <div class="ipt-group">
+            <div class="ln">
+                <div id="dom_id"></div>
+            </div>
+            <div class="single-notice J_singleNotice"></div>
+        </div>
+        <!-- å›¾ç‰‡éªŒè¯ç ï¼Œä¸ä½¿ç”¨ï¼Œæ”¹ä¸ºæ»‘åŠ¨éªŒè¯ -->
+        
+        <input type="hidden" id="logintype" class="pure-input-1-3" name="logintype" value="0" />
+        <div class="single-notice J_singleNotice" data-error=""></div>
+
+        <div class="ipt-tip">
+                <a class="f-fr" href="javascript:if(confirm('http://login.beibei.com/member/find_passwd.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://login.beibei.com/member/find_passwd.html'" tppabs="http://login.beibei.com/member/find_passwd.html">å¿˜è®°å¯†ç </a>
+            <input type="checkbox" checked="checked" id="remember-me" name="remember-me">&nbsp;&nbsp;è‡ªåŠ¨ç™»å½•ã€€
+            <!--<input type="hidden" name="remember-me" value="1">-->
+        </div>
+
+        <div class="ipt-btn-area">
+            <a href="javascript:;" class="ipt-btn J_iptBtn">ç™»å½•</a>
+        </div>
+
+        <div class="ipt-quick">
+            <span class="f-fl">å¿«æ·ç™»å½•æ–¹å¼ï¼š</span>
+                <a class="f-fl ipt-quick-login ipt-quick-qq" href="javascript:if(confirm('http://login.beibei.com/openid/qq/index.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://login.beibei.com/openid/qq/index.html'" tppabs="http://login.beibei.com/openid/qq/index.html" title="QQè´¦å·ç™»å½•"></a>
+                <a class="f-fl ipt-quick-login ipt-quick-tb" href="javascript:if(confirm('http://login.beibei.com/openid/taobao/index.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://login.beibei.com/openid/taobao/index.html'" tppabs="http://login.beibei.com/openid/taobao/index.html" title="æ·˜å®è´¦å·ç™»å½•"></a>
+                <a class="f-fl ipt-quick-login ipt-quick-wx" href="javascript:if(confirm('http://login.beibei.com/openid/weixin/index.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://login.beibei.com/openid/weixin/index.html'" tppabs="http://login.beibei.com/openid/weixin/index.html" title="å¾®ä¿¡è´¦å·ç™»å½•"></a>
+        </div>
+        </form>    </div>
+</div>
+
+<script type="text/javascript">
+    pageData = pageData || {};
+    //pageData.amsRid = [223];
+</script>
+    <!-- é¡µè„š -->
+        <div id="footer" >
+        <div class="illustration">&nbsp;</div>
+     
+    <div class="footer-nav">
+		<a rel="nofollow" href="javascript:if(confirm('http://www.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/'" tppabs="http://www.beibei.com/">é¦–é¡µ</a> |
+		<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/about.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/about.html'" tppabs="http://www.beibei.com/support/help/about.html">å…³äºè´è´</a> |
+		<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://seller.beibei.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://seller.beibei.com/'" tppabs="http://seller.beibei.com/">å•†å®¶å…¥é©»</a> |
+		<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/guarantee/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/guarantee/'" tppabs="http://www.beibei.com/guarantee/">æ­£å“ä¿è¯</a> |
+		<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.husor.com.cn/hr/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.husor.com.cn/hr/'" tppabs="http://www.husor.com.cn/hr/">äººæ‰æ‹›è˜</a> |
+		<a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/kf.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/kf.html'" tppabs="http://www.beibei.com/support/help/kf.html">è”ç³»æˆ‘ä»¬</a> |
+        <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/index.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/index.html'" tppabs="http://www.beibei.com/support/help/index.html">å¸®åŠ©ä¸­å¿ƒ</a> |
+        <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/link.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/link.html'" tppabs="http://www.beibei.com/support/help/link.html">å‹æƒ…é“¾æ¥</a> |
+        <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/app/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/app/'" tppabs="http://www.beibei.com/app/">æ‰‹æœºå®¢æˆ·ç«¯</a> |
+        <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/support/help/kf.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/kf.html'" tppabs="http://www.beibei.com/support/help/kf.html">å®¢æœåœ¨çº¿</a> |
+        <a rel="nofollow" target="_blank" href="javascript:if(confirm('http://www.beibei.com/quick/1503/public.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/quick/1503/public.html'" tppabs="http://www.beibei.com/quick/1503/public.html">è´è´å…¬ç›Š</a>
+        <a class="hidden" href="javascript:if(confirm('http://webscan.360.cn/index/checkwebsite/url/www.beibei.com  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://webscan.360.cn/index/checkwebsite/url/www.beibei.com'" tppabs="http://webscan.360.cn/index/checkwebsite/url/www.beibei.com" name="c49c38b3d39d1adc2328cfcce629548a" >360ç½‘ç«™å®‰å…¨æ£€æµ‹å¹³å°</a>
+	</div>
+    <div class="footer-content">
+        <div class="wrapper">
+            <p>æµ™ICPå¤‡12005806å· |
+                é£Ÿå“æµé€šè®¸å¯è¯ï¼šSP3301041510054925 |
+                å‡ºç‰ˆç‰©ç»è¥è®¸å¯è¯ï¼šæ–°å‡ºå‘é›¶å­—ç¬¬00086å·</p>
+            <p class="mt-8">&copy; 2014-2017 <a style="color: #999" href="javascript:if(confirm('http://www.husor.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.husor.com/'" tppabs="http://www.husor.com/" target="_blank">è´è´é›†å›¢ </a>All Rights Reserved. å®¢æœçƒ­çº¿ï¼š10107788</p>
+                    </div>
+    </div>
+</div>
+
+<div class="side-panel" ba-ins="fn.repairSidePanel">
+    <div title="è´­ç‰©è½¦" data-url="http://trade.beibei.com/cart/mine.html" id="sidebar-cart" class="side-panel-item view-SideBarCartTrigger">
+        <div class="view-SideBarCartTriggerBtn side-panel-item-wrap"></div>
+        <div class="view-SideBarCart side-panel-item-cart" style="width:350px;"></div><i class="iconfont">&#xf0179;</i><span class="notify"><em class="cart-num">0</em><i class="iconfont">&#xf018e;</i></span>
+    </div>
+    <div title="æ‰‹æœºAPP" class="side-panel-item view-SidePhoneApp side-panel-App">
+        <div class="side-panel-phone">
+            <p>ä¸‹è½½æ‰‹æœºAPP</p>
+            <p>éšæ—¶éšåœ°çœ‹ä¸Šæ–°</p>
+            <img src="40450807220001_158x158.jpg" tppabs="https://b1.hucdn.com/upload/prom/1411/28/40450807220001_158x158.jpg">
+        </div>
+        <i class="iconfont">&#xf003f;</i>
+    </div>
+    <a href="javascript:if(confirm('http://www.beibei.com/support/help/frequently_qa_1.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beibei.com/support/help/frequently_qa_1.html'" tppabs="http://www.beibei.com/support/help/frequently_qa_1.html" title="å®¢æœåœ¨çº¿" ba-ins="click~kf" id="kfzx" class="side-panel-item"><i class="iconfont tip-hide">&#xe621;</i><span class="tip-txt hidden">å®¢æœåœ¨çº¿</span></a>
+    <div title="å›åˆ°é¡¶éƒ¨" ba-ins="click~backToTop" id="elevator" class="side-panel-item"><i class="iconfont tip-hide">&#xf016f;</i><span class="tip-txt hidden">å›åˆ°é¡¶éƒ¨</span></div>
+</div>
+
+    <!-- js -->
+        <script type="text/javascript" src="isp_lib-c413a85566m.js" tppabs="https://st.beibei.com/script/production/isp_lib-c413a85566m.js"></script>
+    <script type="text/javascript" src="homelib.js" tppabs="https://st.beibei.com/static/build/js/690286da71m/homelib.js"></script>
+                                        <script type="text/javascript">
+                    var seaJsPath = 'member_login.js'/*tpa=https://st.beibei.com/static/build/js/e261e923cfm/member_login.js*/;
+                    seaJsPath = seaJsPath.slice(0,seaJsPath.lastIndexOf('/')) + '/';
+                    seajs.config({
+                        base:seaJsPath
+                    });
+                    seajs.use('member_login.js'/*tpa=https://st.beibei.com/static/build/js/e261e923cfm/member_login.js*/)
+                </script>
+                        </body>
+</html>
